@@ -1,1 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Gangadhar | My Website</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f1f1f1;
+  color:#222;
+  text-align:center;
+  transition:background .3s,color .3s;
+}
+
+/* PROFILE */
+.profile{
+  padding:35px 15px 20px;
+}
+
+.profile-photo{
+  width:145px;
+  height:145px;
+  margin:auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:5px solid #222;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.profile-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.profile h1{
+  margin-top:18px;
+  font-size:38px;
+}
+
+.profile p{
+  margin-top:8px;
+  font-size:18px;
+  color:#666;
+}
+
+/* SOCIAL */
+.social-buttons{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.social{
+  display:inline-block;
+  padding:13px 20px;
+  background:#222;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-size:17px;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+  transition:.2s;
+}
+
+.social:active{
+  transform:scale(.96);
+}
+
+/* HERO */
+.hero{
+  padding:45px 20px;
+}
+
+.hero h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:19px;
+}
+
+/* NAVBAR */
+.navbar{
+  width:92%;
+  max-width:700px;
+  margin:20px auto;
+  padding:20px;
+  background:#222;
+  border-radius:20px;
+  color:white;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.nav-links{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+}
+
+.nav-links a:hover{
+  color:#ffd700;
+}
+
+/* BUTTONS */
+.action-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:25px 15px 35px;
+}
+
+.dark-btn,
+.share-btn{
+  padding:14px 22px;
+  border:0;
+  border-radius:30px;
+  background:#222;
+  color:white;
+  font-size:17px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* SECTIONS */
+section{
+  width:92%;
+  max-width:700px;
+  margin:30px auto;
+  padding:55px 20px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+#home{
+  background:white;
+}
+
+#about{
+  background:#e8e8e8;
+}
+
+#skills{
+  background:#f7f7f7;
+}
+
+#contact{
+  background:#dedede;
+}
+
+section h2{
+  font-size:32px;
+  margin-bottom:18px;
+}
+
+section p{
+  font-size:18px;
+  line-height:1.7;
+  margin:8px 0;
+}
+
+/* SKILLS */
+.skills-container{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.skill{
+  width:180px;
+  min-height:250px;
+  padding:30px 15px;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.skill-icon{
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.skill h3{
+  font-size:27px;
+  margin-bottom:12px;
+}
+
+.skill p{
+  color:#666;
+  font-size:17px;
+}
+
+/* CONTACT FORM */
+form{
+  max-width:550px;
+  margin:25px auto 0;
+}
+
+form input,
+form textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:12px;
+  font-size:16px;
+  font-family:Arial,sans-serif;
+}
+
+form textarea{
+  height:130px;
+  resize:vertical;
+}
+
+.send-btn{
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:12px;
+  background:#222;
+  color:white;
+  font-size:17px;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  padding:30px 15px;
+  margin-top:30px;
+  background:#222;
+  color:white;
+}
+
+/* DARK MODE */
+body.dark{
+  background:#111;
+  color:white;
+}
+
+body.dark .profile p{
+  color:#bbb;
+}
+
+body.dark #home{
+  background:#222;
+}
+
+body.dark #about{
+  background:#333;
+}
+
+body.dark #skills{
+  background:#222;
+}
+
+body.dark #contact{
+  background:#333;
+}
+
+body.dark .skill{
+  background:#333;
+}
+
+body.dark .skill p{
+  color:#ccc;
+}
+
+body.dark form input,
+body.dark form textarea{
+  background:#222;
+  color:white;
+  border-color:#555;
+}
+
+body.dark .dark-btn,
+body.dark .share-btn,
+body.dark .social,
+body.dark .send-btn{
+  background:#444;
+}
+
+/* BACK TO TOP */
+#topBtn{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border:0;
+  border-radius:50%;
+  background:#222;
+  color:white;
+  font-size:22px;
+  cursor:pointer;
+  display:none;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+/* MOBILE */
+@media(max-width:500px){
+
+  .profile h1{
+    font-size:32px;
+  }
+
+  .hero h2{
+    font-size:35px;
+  }
+
+  .navbar{
+    padding:20px 12px;
+  }
+
+  .nav-links{
+    gap:18px;
+  }
+
+  section{
+    padding:45px 15px;
+  }
+
+  section h2{
+    font-size:29px;
+  }
+
+  .skill{
+    width:150px;
+  }
+
+  .social{
+    font-size:16px;
+    padding:12px 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PROFILE -->
+<div class="profile">
+
+  <div class="profile-photo">
+    <img src="profile.jpg" alt="Gangadhar">
+  </div>
+
+  <h1>Gangadhar</h1>
+
+  <p>Web Developer | Learner | Creator</p>
+
+  <div class="social-buttons">
+
+    <a
+      href="https://www.instagram.com/muttu_vishwakarma_30"
+      target="_blank"
+      class="social">
+      📸 Instagram
+    </a>
+
+    <a
+      href="mailto:muttubadiger618@gmail.com"
+      class="social">
+      📧 Email
+    </a>
+
+    <a
+      href="https://wa.me/918861261760"
+      target="_blank"
+      class="social">
+      💬 WhatsApp
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- HERO -->
+<div class="hero">
+
+  <h2>Welcome 👋</h2>
+
+  <p>This is my personal website.</p>
+
+</div>
+
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+  <div class="logo">
+    My Website
+  </div>
+
+  <div class="nav-links">
+
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+
+  </div>
+
+</nav>
+
+
+<!-- ACTION BUTTONS -->
+<div class="action-buttons">
+
+  <button class="dark-btn" onclick="darkMode()">
+    🌙 Dark Mode
+  </button>
+
+  <button class="share-btn" onclick="shareWebsite()">
+    🔗 Share Website
+  </button>
+
+</div>
+
+
+<!-- HOME -->
+<section id="home">
+
+  <h2>Home 🏠</h2>
+
+  <p>Welcome to my website!</p>
+
+  <p>
+    I am learning web development and building my own website.
+  </p>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+  <h2>About 👨‍💻</h2>
+
+  <p>Hello! My name is Gangadhar.</p>
+
+  <p>
+    I am learning HTML, CSS and JavaScript.
+  </p>
+
+  <p>
+    I enjoy learning new things and creating websites.
+  </p>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+  <h2>My Skills 💻</h2>
+
+  <p>I am learning and improving these skills.</p>
+
+  <div class="skills-container">
+
+    <div class="skill">
+
+      <div class="skill-icon">🌐</div>
+
+      <h3>HTML</h3>
+
+      <p>
+        Web Page<br>
+        Structure
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <div class="skill-icon">🎨</div>
+
+      <h3>CSS</h3>
+
+      <p>
+        Design &<br>
+        Styling
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <div class="skill-icon">⚡</div>
+
+      <h3>JavaScript</h3>
+
+      <p>
+        Interactive<br>
+        Websites
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+  <h2>Contact Me 📩</h2>
+
+  <p>
+    Send me a message through WhatsApp.
+  </p>
+
+  <form onsubmit="sendMessage(event)">
+
+    <input
+      type="text"
+      id="name"
+      placeholder="Your Name"
+      required
+    >
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Your Email"
+      required
+    >
+
+    <textarea
+      id="message"
+      placeholder="Write your message..."
+      required
+    ></textarea>
+
+    <button type="submit" class="send-btn">
+      📩 Send Message
+    </button>
+
+  </form>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <p>© 2026 Gangadhar. All Rights Reserved.</p>
+
+</footer>
+
+
+<!-- TOP BUTTON -->
+<button id="topBtn" onclick="goTop()">
+  ⬆️
+</button>
+
+
+<script>
+
+/* DARK MODE */
+function darkMode(){
+
+  document.body.classList.toggle("dark");
+
+  const button = document.querySelector(".dark-btn");
+
+  if(document.body.classList.contains("dark")){
+
+    button.innerHTML = "☀️ Light Mode";
+
+  }else{
+
+    button.innerHTML = "🌙 Dark Mode";
+
+  }
+
+}
+
+
+/* SHARE WEBSITE */
+function shareWebsite(){
+
+  const url = window.location.href;
+
+  if(navigator.share){
+
+    navigator.share({
+      title:"Gangadhar | My Website",
+      text:"Visit my personal website!",
+      url:url
+    });
+
+  }else{
+
+    navigator.clipboard.writeText(url);
+
+    alert("Website link copied!");
+
+  }
+
+}
+
+
+/* WHATSAPP CONTACT */
+function sendMessage(event){
+
+  event.preventDefault();
+
+  const name =
+    document.getElementById("name").value;
+
+  const email =
+    document.getElementById("email").value;
+
+  const message =
+    document.getElementById("message").value;
+
+  const text =
+    "Hello Gangadhar!%0A%0A" +
+    "Name: " +
+    encodeURIComponent(name) +
+    "%0A" +
+    "Email: " +
+    encodeURIComponent(email) +
+    "%0A" +
+    "Message: " +
+    encodeURIComponent(message);
+
+  const whatsappURL =
+    "https://wa.me/918861261760?text=" + text;
+
+  window.open(whatsappURL,"_blank");
+
+  event.target.reset();
+
+}
+
+
+/* BACK TO TOP */
+const topBtn =
+  document.getElementById("topBtn");
+
+window.addEventListener("scroll",function(){
+
+  if(window.scrollY > 400){
+
+    topBtn.style.display = "block";
+
+  }else{
+
+    topBtn.style.display = "none";
+
+  }
+
+});
+
+
+function goTop(){
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+</script>
+
+</body>
+  </html>
