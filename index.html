@@ -4,14 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gangadhar | My Website</title>
+  <title>Gangadhar | Portfolio</title>
 
   <style>
-
-    /* =========================
-       BASIC
-    ========================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -24,46 +19,21 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(
-        135deg,
-        #f5f5f5,
-        #e8e8e8,
-        #ffffff
-      );
-
+      background: linear-gradient(135deg, #f5f5f5, #e8e8e8, #ffffff);
       background-size: 300% 300%;
       animation: bgMove 8s ease infinite;
-
       color: #222;
       text-align: center;
-      transition: background 0.3s, color 0.3s;
+      transition: 0.3s;
     }
-
-
-    /* =========================
-       BACKGROUND ANIMATION
-    ========================= */
 
     @keyframes bgMove {
-
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-
-    /* =========================
-       PROFILE
-    ========================= */
+    /* PROFILE */
 
     .profile {
       padding: 35px 20px 25px;
@@ -72,18 +42,13 @@
     .profile-photo {
       width: 130px;
       height: 130px;
-
       margin: auto;
-
       border-radius: 50%;
       overflow: hidden;
-
       border: 4px solid #222;
-
       box-shadow:
-        0 0 0 4px rgba(255,255,255,0.8),
-        0 5px 25px rgba(0,0,0,0.25);
-
+        0 0 0 4px rgba(255,255,255,.8),
+        0 5px 25px rgba(0,0,0,.25);
       animation: photoGlow 2.5s ease-in-out infinite;
     }
 
@@ -94,19 +59,17 @@
     }
 
     @keyframes photoGlow {
-
-      0%, 100% {
+      0%,100% {
         box-shadow:
-          0 0 0 4px rgba(255,255,255,0.8),
-          0 5px 25px rgba(0,0,0,0.25);
+          0 0 0 4px rgba(255,255,255,.8),
+          0 5px 25px rgba(0,0,0,.25);
       }
 
       50% {
         box-shadow:
-          0 0 0 6px rgba(255,255,255,0.9),
-          0 5px 35px rgba(0,0,0,0.35);
+          0 0 0 6px rgba(255,255,255,.9),
+          0 5px 35px rgba(0,0,0,.35);
       }
-
     }
 
     .profile h1 {
@@ -121,56 +84,37 @@
       min-height: 22px;
     }
 
-
-    /* =========================
-       SOCIAL BUTTONS
-    ========================= */
+    /* SOCIAL */
 
     .social-buttons {
       margin-top: 20px;
-
       display: flex;
       justify-content: center;
-
       gap: 10px;
       flex-wrap: wrap;
     }
 
     .social {
       padding: 11px 17px;
-
       background: #222;
       color: white;
-
       text-decoration: none;
-
       border-radius: 22px;
-
       display: inline-block;
-
-      box-shadow:
-        0 4px 12px rgba(0,0,0,0.15);
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      transition: .2s;
     }
 
     .social:hover {
       transform: translateY(-3px);
-
-      box-shadow:
-        0 7px 18px rgba(0,0,0,0.22);
+      box-shadow: 0 7px 18px rgba(0,0,0,.22);
     }
 
     .social:active {
-      transform: scale(0.94);
+      transform: scale(.94);
     }
 
-
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
       padding: 25px 20px;
@@ -185,157 +129,79 @@
       font-size: 18px;
     }
 
-
-    /* =========================
-       NAVBAR
-    ========================= */
+    /* NAVBAR */
 
     .navbar {
-      width: 90%;
-      max-width: 650px;
-
+      width: 92%;
+      max-width: 800px;
       margin: 20px auto;
-
       padding: 18px;
-
       background: #222;
-
       border-radius: 15px;
-
       display: flex;
-
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
       color: white;
-
       font-size: 22px;
       font-weight: bold;
     }
 
     .nav-links {
       display: flex;
-
-      gap: 18px;
-
+      gap: 16px;
       flex-wrap: wrap;
-
       justify-content: center;
     }
 
     .nav-links a {
       color: white;
-
       text-decoration: none;
-
-      font-size: 17px;
-
-      transition: 0.2s;
+      font-size: 16px;
+      transition: .2s;
     }
 
     .nav-links a:hover {
       color: #ffd700;
     }
 
+    /* BUTTONS */
 
-    /* =========================
-       DARK MODE BUTTON
-    ========================= */
-
-    .dark-btn {
-
-      margin: 15px auto 15px;
-
-      padding: 13px 22px;
-
-      border: none;
-
-      border-radius: 25px;
-
-      background: #222;
-
-      color: white;
-
-      font-size: 16px;
-
-      cursor: pointer;
-
-      transition: transform 0.2s ease;
-    }
-
-    .dark-btn:active {
-      transform: scale(0.94);
-    }
-
-
-    /* =========================
-       SHARE BUTTON
-    ========================= */
-
+    .dark-btn,
     .share-btn {
-
-      margin: 0 auto 30px;
-
-      padding: 14px 24px;
-
+      margin: 10px 5px 25px;
+      padding: 13px 22px;
       border: none;
-
-      border-radius: 30px;
-
+      border-radius: 25px;
       background: #222;
-
       color: white;
-
       font-size: 16px;
-
-      font-weight: bold;
-
       cursor: pointer;
-
-      box-shadow:
-        0 5px 15px rgba(0,0,0,0.2);
-
-      transition:
-        transform 0.2s ease;
+      transition: .2s;
     }
 
+    .dark-btn:active,
     .share-btn:active {
-      transform: scale(0.94);
+      transform: scale(.94);
     }
 
-
-    /* =========================
-       SECTIONS
-    ========================= */
+    /* SECTIONS */
 
     section {
-
-      width: 90%;
-
-      max-width: 650px;
-
+      width: 92%;
+      max-width: 800px;
       margin: 25px auto;
-
-      padding: 60px 20px;
-
+      padding: 55px 20px;
       border-radius: 18px;
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-
-      box-shadow:
-        0 5px 18px rgba(0,0,0,0.08);
+      transition: .25s;
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
     }
 
     section:hover {
-
       transform: translateY(-4px);
-
-      box-shadow:
-        0 10px 25px rgba(0,0,0,0.14);
+      box-shadow: 0 10px 25px rgba(0,0,0,.14);
     }
 
     #home {
@@ -346,380 +212,346 @@
       background: #e9e9e9;
     }
 
+    #skills {
+      background: #eeeeee;
+    }
+
+    #projects {
+      background: #e5e5e5;
+    }
+
     #contact {
       background: #dcdcdc;
     }
 
     section h2 {
-
       font-size: 30px;
-
       margin-bottom: 15px;
     }
 
     section p {
-
       font-size: 17px;
-
       line-height: 1.7;
     }
 
-
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
+    /* SCROLL REVEAL */
 
     .reveal {
-
       opacity: 0;
-
       transform: translateY(25px);
-
-      transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
+      transition: opacity .5s ease, transform .5s ease;
     }
 
     .reveal.show {
-
       opacity: 1;
-
       transform: translateY(0);
     }
 
+    /* SKILLS */
 
-    /* =========================
-       CONTACT FORM
-    ========================= */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px 12px;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,.08);
+      transition: .25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
+
+    .skill-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .skill-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* PROJECTS */
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 18px;
+      box-shadow: 0 5px 15px rgba(0,0,0,.08);
+      transition: .25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
+
+    .project-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .project-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 16px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: .2s;
+    }
+
+    .project-btn:active {
+      transform: scale(.94);
+    }
+
+    /* CONTACT */
 
     form {
-
-      width: 90%;
-
+      width: 92%;
       max-width: 500px;
-
       margin: 25px auto;
     }
 
     form input,
     form textarea {
-
       width: 100%;
-
       padding: 15px;
-
       margin-bottom: 15px;
-
       border: 1px solid #ccc;
-
       border-radius: 12px;
-
       font-size: 16px;
-
-      font-family: Arial, sans-serif;
-
+      font-family: Arial,sans-serif;
       outline: none;
+    }
 
-      transition:
-        border 0.2s,
-        box-shadow 0.2s;
+    form textarea {
+      height: 130px;
+      resize: vertical;
     }
 
     form input:focus,
     form textarea:focus {
-
       border-color: #222;
-
-      box-shadow:
-        0 0 0 3px rgba(0,0,0,0.08);
-    }
-
-    form textarea {
-
-      height: 130px;
-
-      resize: vertical;
+      box-shadow: 0 0 0 3px rgba(0,0,0,.08);
     }
 
     .send-btn {
-
       width: 100%;
-
       padding: 15px;
-
       border: none;
-
       border-radius: 12px;
-
       background: #222;
-
       color: white;
-
       font-size: 17px;
-
       cursor: pointer;
-
-      transition:
-        transform 0.2s ease;
     }
 
-    .send-btn:active {
-
-      transform: scale(0.98);
-    }
-
-
-    /* =========================
-       BACK TO TOP
-    ========================= */
+    /* TOP BUTTON */
 
     #topBtn {
-
       position: fixed;
-
       right: 20px;
-
       bottom: 20px;
-
       width: 48px;
-
       height: 48px;
-
       border: none;
-
       border-radius: 50%;
-
       background: #222;
-
       color: white;
-
       font-size: 20px;
-
       cursor: pointer;
-
       display: none;
-
       z-index: 1000;
-
-      box-shadow:
-        0 5px 15px rgba(0,0,0,0.25);
+      box-shadow: 0 5px 15px rgba(0,0,0,.25);
     }
 
-    #topBtn:active {
-
-      transform: scale(0.9);
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     footer {
-
       padding: 30px 20px;
-
       background: #222;
-
       color: white;
-
       margin-top: 30px;
     }
 
-
-    /* =========================
-       DARK MODE
-    ========================= */
+    /* DARK MODE */
 
     body.dark {
-
       background: #111;
-
       color: white;
     }
 
     body.dark .profile p {
-
       color: #bbb;
     }
 
     body.dark #home {
-
       background: #222;
     }
 
     body.dark #about {
+      background: #333;
+    }
 
+    body.dark #skills {
+      background: #333;
+    }
+
+    body.dark #projects {
       background: #333;
     }
 
     body.dark #contact {
-
       background: #444;
     }
 
     body.dark .social,
     body.dark .dark-btn,
     body.dark .share-btn,
-    body.dark .send-btn {
-
+    body.dark .send-btn,
+    body.dark .project-btn {
       background: #444;
     }
 
-    body.dark form input,
-    body.dark form textarea {
-
+    body.dark .skill-card,
+    body.dark .project-card {
       background: #222;
+    }
 
+    body.dark .skill-card p,
+    body.dark .project-card p {
+      color: #bbb;
+    }
+
+    body.dark input,
+    body.dark textarea {
+      background: #222;
       color: white;
-
       border-color: #555;
     }
 
-    body.dark form input:focus,
-    body.dark form textarea:focus {
+    /* MOBILE */
 
-      border-color: white;
-
-      box-shadow:
-        0 0 0 3px rgba(255,255,255,0.08);
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 500px) {
-
-      .profile h1 {
-
-        font-size: 30px;
-      }
-
-      .hero h2 {
-
-        font-size: 32px;
-      }
+    @media (max-width: 650px) {
 
       .navbar {
-
         flex-direction: column;
-
         gap: 18px;
       }
 
-      .nav-links {
-
-        gap: 12px;
+      .skills-container,
+      .projects-container {
+        grid-template-columns: 1fr;
       }
 
-      .social {
+      .hero h2 {
+        font-size: 32px;
+      }
 
-        font-size: 14px;
+      .profile h1 {
+        font-size: 30px;
       }
 
       section {
-
         padding: 45px 18px;
       }
 
+      .nav-links {
+        gap: 10px;
+      }
     }
 
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =========================
-       PROFILE
-  ========================== -->
+  <!-- PROFILE -->
 
   <div class="profile">
 
     <div class="profile-photo">
-
-      <img
-        src="profile.jpg"
-        alt="Gangadhar"
-      >
-
+      <img src="profile.jpg" alt="Gangadhar">
     </div>
 
-
     <h1>Gangadhar</h1>
-
 
     <p>
       <span id="typing"></span>
     </p>
 
-
     <div class="social-buttons">
-
-
-      <!-- Instagram -->
 
       <a
         href="https://www.instagram.com/muttu_vishwakarma_30?igsh=NXJqdDdzZnYwcDA1"
         target="_blank"
         class="social">
-
         📸 Instagram
-
       </a>
-
-
-      <!-- Email -->
 
       <a
         href="mailto:muttubadiger618@gmail.com"
         class="social">
-
         📧 Email
-
       </a>
-
-
-      <!-- WhatsApp -->
 
       <a
         href="https://wa.me/918861261760"
         target="_blank"
         class="social">
-
         💬 WhatsApp
-
       </a>
-
 
     </div>
 
   </div>
 
 
-
-  <!-- =========================
-       WELCOME
-  ========================== -->
+  <!-- WELCOME -->
 
   <div class="hero">
 
     <h2>Welcome 👋</h2>
 
-    <p>
-      This is my first website.
-    </p>
+    <p>This is my first website.</p>
 
   </div>
 
 
-
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
+  <!-- NAVIGATION -->
 
   <nav class="navbar">
 
@@ -727,72 +559,39 @@
       My Website
     </div>
 
-
     <div class="nav-links">
 
-      <a href="#home">
-        Home
-      </a>
-
-      <a href="#about">
-        About
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
 
     </div>
 
   </nav>
 
 
+  <!-- BUTTONS -->
 
-  <!-- =========================
-       DARK MODE
-  ========================== -->
-
-  <button
-    class="dark-btn"
-    onclick="darkMode()">
-
+  <button class="dark-btn" onclick="darkMode()">
     🌙 Dark Mode
-
   </button>
 
-
-
-  <!-- =========================
-       SHARE
-  ========================== -->
-
-  <button
-    class="share-btn"
-    onclick="shareWebsite()">
-
+  <button class="share-btn" onclick="shareWebsite()">
     🔗 Share Website
-
   </button>
 
 
+  <!-- HOME -->
 
-  <!-- =========================
-       HOME
-  ========================== -->
+  <section id="home" class="reveal">
 
-  <section
-    id="home"
-    class="reveal">
-
-    <h2>
-      Home 🏠
-    </h2>
-
+    <h2>Home 🏠</h2>
 
     <p>
       Welcome to my website!
     </p>
-
 
     <p>
       I am learning web development
@@ -802,24 +601,13 @@
   </section>
 
 
+  <!-- ABOUT -->
 
-  <!-- =========================
-       ABOUT
-  ========================== -->
+  <section id="about" class="reveal">
 
-  <section
-    id="about"
-    class="reveal">
+    <h2>About 👨‍💻</h2>
 
-    <h2>
-      About 👨‍💻
-    </h2>
-
-
-    <p>
-      Hello! My name is Gangadhar.
-    </p>
-
+    <p>Hello! My name is Gangadhar.</p>
 
     <p>
       I am learning HTML, CSS and JavaScript.
@@ -828,23 +616,138 @@
   </section>
 
 
+  <!-- SKILLS -->
 
-  <!-- =========================
-       CONTACT
-  ========================== -->
+  <section id="skills" class="reveal">
 
-  <section
-    id="contact"
-    class="reveal">
+    <h2>My Skills 💻</h2>
 
-    <h2>
-      Contact Me 📩
-    </h2>
+    <p>
+      I am learning and improving these skills.
+    </p>
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+
+        <div class="skill-icon">🌐</div>
+
+        <h3>HTML</h3>
+
+        <p>
+          Web Page Structure
+        </p>
+
+      </div>
 
 
-    <form
-      onsubmit="sendMessage(event)">
+      <div class="skill-card">
 
+        <div class="skill-icon">🎨</div>
+
+        <h3>CSS</h3>
+
+        <p>
+          Design & Styling
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">⚡</div>
+
+        <h3>JavaScript</h3>
+
+        <p>
+          Interactive Websites
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects" class="reveal">
+
+    <h2>My Projects 🚀</h2>
+
+    <p>
+      Here are some of the projects I am building.
+    </p>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+
+        <div class="project-icon">🌐</div>
+
+        <h3>My Personal Website</h3>
+
+        <p>
+          My first personal website
+          built using HTML, CSS and JavaScript.
+        </p>
+
+        <a href="#home" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-icon">💻</div>
+
+        <h3>Web Development</h3>
+
+        <p>
+          Learning to create modern
+          and responsive websites.
+        </p>
+
+        <a href="#skills" class="project-btn">
+          View Skills
+        </a>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-icon">🎨</div>
+
+        <h3>Creative Design</h3>
+
+        <p>
+          Creating clean and attractive
+          web designs.
+        </p>
+
+        <a href="#contact" class="project-btn">
+          Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="reveal">
+
+    <h2>Contact Me 📩</h2>
+
+    <form onsubmit="sendMessage(event)">
 
       <input
         type="text"
@@ -853,7 +756,6 @@
         required
       >
 
-
       <input
         type="email"
         id="email"
@@ -861,30 +763,21 @@
         required
       >
 
-
       <textarea
         id="message"
         placeholder="Write your message..."
         required
       ></textarea>
 
-
-      <button
-        type="submit"
-        class="send-btn">
-
+      <button type="submit" class="send-btn">
         📩 Send Message
-
       </button>
 
-
     </form>
-
 
     <p>
       Thank you for visiting my website!
     </p>
-
 
     <p>
       You can connect with me through
@@ -894,10 +787,7 @@
   </section>
 
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -909,29 +799,16 @@
   </footer>
 
 
-
   <!-- BACK TO TOP -->
 
-  <button
-    id="topBtn"
-    onclick="goTop()">
-
+  <button id="topBtn" onclick="goTop()">
     🔝
-
   </button>
 
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
 
-
-    /* =========================
-       DARK MODE
-    ========================== */
+    /* DARK MODE */
 
     function darkMode() {
 
@@ -940,65 +817,45 @@
       const button =
         document.querySelector(".dark-btn");
 
+      if (document.body.classList.contains("dark")) {
 
-      if (
-        document.body.classList.contains("dark")
-      ) {
-
-        button.innerHTML =
-          "☀️ Light Mode";
+        button.innerHTML = "☀️ Light Mode";
 
       } else {
 
-        button.innerHTML =
-          "🌙 Dark Mode";
+        button.innerHTML = "🌙 Dark Mode";
 
       }
 
     }
 
 
-
-    /* =========================
-       SHARE WEBSITE
-    ========================== */
+    /* SHARE */
 
     function shareWebsite() {
 
       if (navigator.share) {
 
         navigator.share({
-
-          title:
-            "Gangadhar | My Website",
-
-          text:
-            "Check out my website!",
-
-          url:
-            window.location.href
-
-        }).catch(function () {});
-
+          title: "Gangadhar | My Website",
+          text: "Check out my website!",
+          url: window.location.href
+        }).catch(function(){});
 
       } else {
 
-        if (
-          navigator.clipboard
-        ) {
+        if (navigator.clipboard) {
 
           navigator.clipboard.writeText(
             window.location.href
           );
 
-          alert(
-            "Website link copied! 📋"
-          );
+          alert("Website link copied! 📋");
 
         } else {
 
           alert(
-            "Copy this link:\n" +
+            "Website link:\n" +
             window.location.href
           );
 
@@ -1009,96 +866,62 @@
     }
 
 
-
-    /* =========================
-       WHATSAPP CONTACT FORM
-    ========================== */
+    /* CONTACT → WHATSAPP */
 
     function sendMessage(event) {
 
       event.preventDefault();
 
-
       const name =
-        document.getElementById(
-          "name"
-        ).value;
-
+        document.getElementById("name").value;
 
       const email =
-        document.getElementById(
-          "email"
-        ).value;
-
+        document.getElementById("email").value;
 
       const message =
-        document.getElementById(
-          "message"
-        ).value;
-
+        document.getElementById("message").value;
 
       const whatsappMessage =
-
         "Hello Gangadhar!%0A%0A" +
-
         "Name: " +
         encodeURIComponent(name) +
         "%0A" +
-
         "Email: " +
         encodeURIComponent(email) +
         "%0A" +
-
         "Message: " +
         encodeURIComponent(message);
 
-
       const whatsappURL =
-
         "https://wa.me/918861261760?text=" +
         whatsappMessage;
-
 
       window.open(
         whatsappURL,
         "_blank"
       );
 
-
       event.target.reset();
 
     }
 
 
-
-    /* =========================
-       TYPING EFFECT
-    ========================== */
+    /* TYPING EFFECT */
 
     const typingText =
       "Web Developer | Learner | Creator";
 
-
     let typingIndex = 0;
-
 
     function typingEffect() {
 
-      if (
-        typingIndex <
-        typingText.length
-      ) {
+      if (typingIndex < typingText.length) {
 
-        document.getElementById(
-          "typing"
-        ).textContent +=
-          typingText.charAt(
-            typingIndex
-          );
-
+        document.getElementById("typing")
+          .textContent +=
+          typingText.charAt(typingIndex);
 
         typingIndex++;
-
 
         setTimeout(
           typingEffect,
@@ -1109,108 +932,74 @@
 
     }
 
-
     typingEffect();
 
 
-
-    /* =========================
-       SCROLL REVEAL
-    ========================== */
+    /* SCROLL REVEAL */
 
     const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
-
+      document.querySelectorAll(".reveal");
 
     function revealOnScroll() {
 
-      revealElements.forEach(
-        function(element) {
+      revealElements.forEach(function(element) {
 
-          const position =
-            element.getBoundingClientRect()
-            .top;
+        const position =
+          element.getBoundingClientRect().top;
 
+        if (
+          position <
+          window.innerHeight - 80
+        ) {
 
-          const screenHeight =
-            window.innerHeight;
-
-
-          if (
-            position <
-            screenHeight - 80
-          ) {
-
-            element.classList.add(
-              "show"
-            );
-
-          }
+          element.classList.add("show");
 
         }
-      );
+
+      });
 
     }
-
 
     window.addEventListener(
       "scroll",
       revealOnScroll
     );
 
-
     revealOnScroll();
 
 
-
-    /* =========================
-       BACK TO TOP
-    ========================== */
+    /* BACK TO TOP */
 
     const topBtn =
-      document.getElementById(
-        "topBtn"
-      );
-
+      document.getElementById("topBtn");
 
     window.addEventListener(
       "scroll",
       function() {
 
-        if (
-          window.scrollY > 300
-        ) {
+        if (window.scrollY > 300) {
 
-          topBtn.style.display =
-            "block";
+          topBtn.style.display = "block";
 
         } else {
 
-          topBtn.style.display =
-            "none";
+          topBtn.style.display = "none";
 
         }
 
       }
     );
 
-
     function goTop() {
 
       window.scrollTo({
-
         top: 0,
-
         behavior: "smooth"
-
       });
 
     }
 
   </script>
-
 
 </body>
 </html>
