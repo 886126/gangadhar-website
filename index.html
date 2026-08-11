@@ -1,443 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gangadhar | My Website</title>
+  <title>Gangadhar | Portfolio</title>
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-html{
-  scroll-behavior:smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-  font-family:Arial,sans-serif;
-  background:#f1f1f1;
-  color:#222;
-  text-align:center;
-  transition:background .3s,color .3s;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f5f5, #e8e8e8, #ffffff);
+      background-size: 300% 300%;
+      animation: bgMove 8s ease infinite;
+      color: #222;
+      text-align: center;
+      transition: 0.3s;
+    }
 
-/* PROFILE */
-.profile{
-  padding:35px 15px 20px;
-}
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-.profile-photo{
-  width:145px;
-  height:145px;
-  margin:auto;
-  border-radius:50%;
-  overflow:hidden;
-  border:5px solid #222;
-  box-shadow:0 8px 25px rgba(0,0,0,.2);
-}
+    /* PROFILE */
 
-.profile-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+    .profile {
+      padding: 35px 20px 25px;
+    }
 
-.profile h1{
-  margin-top:18px;
-  font-size:38px;
-}
+    .profile-photo {
+      width: 130px;
+      height: 130px;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #222;
+      box-shadow:
+        0 0 0 4px rgba(255,255,255,.8),
+        0 5px 25px rgba(0,0,0,.25);
+      animation: photoGlow 2.5s ease-in-out infinite;
+    }
 
-.profile p{
-  margin-top:8px;
-  font-size:18px;
-  color:#666;
-}
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-/* SOCIAL */
-.social-buttons{
-  margin-top:22px;
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
+    @keyframes photoGlow {
+      0%,100% {
+        box-shadow:
+          0 0 0 4px rgba(255,255,255,.8),
+          0 5px 25px rgba(0,0,0,.25);
+      }
 
-.social{
-  display:inline-block;
-  padding:13px 20px;
-  background:#222;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-size:17px;
-  box-shadow:0 5px 15px rgba(0,0,0,.15);
-  transition:.2s;
-}
+      50% {
+        box-shadow:
+          0 0 0 6px rgba(255,255,255,.9),
+          0 5px 35px rgba(0,0,0,.35);
+      }
+    }
 
-.social:active{
-  transform:scale(.96);
-}
+    .profile h1 {
+      margin-top: 15px;
+      font-size: 34px;
+    }
 
-/* HERO */
-.hero{
-  padding:45px 20px;
-}
+    .profile p {
+      margin-top: 8px;
+      font-size: 17px;
+      color: #666;
+      min-height: 22px;
+    }
 
-.hero h2{
-  font-size:42px;
-  margin-bottom:12px;
-}
+    /* SOCIAL */
 
-.hero p{
-  font-size:19px;
-}
+    .social-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-/* NAVBAR */
-.navbar{
-  width:92%;
-  max-width:700px;
-  margin:20px auto;
-  padding:20px;
-  background:#222;
-  border-radius:20px;
-  color:white;
-}
+    .social {
+      padding: 11px 17px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      border-radius: 22px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      transition: .2s;
+    }
 
-.logo{
-  font-size:25px;
-  font-weight:bold;
-  margin-bottom:15px;
-}
+    .social:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 18px rgba(0,0,0,.22);
+    }
 
-.nav-links{
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  flex-wrap:wrap;
-}
+    .social:active {
+      transform: scale(.94);
+    }
 
-.nav-links a{
-  color:white;
-  text-decoration:none;
-  font-size:18px;
-}
+    /* HERO */
 
-.nav-links a:hover{
-  color:#ffd700;
-}
+    .hero {
+      padding: 25px 20px;
+    }
 
-/* BUTTONS */
-.action-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin:25px 15px 35px;
-}
+    .hero h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
 
-.dark-btn,
-.share-btn{
-  padding:14px 22px;
-  border:0;
-  border-radius:30px;
-  background:#222;
-  color:white;
-  font-size:17px;
-  cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
+    .hero p {
+      font-size: 18px;
+    }
 
-/* SECTIONS */
-section{
-  width:92%;
-  max-width:700px;
-  margin:30px auto;
-  padding:55px 20px;
-  border-radius:22px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
+    /* NAVBAR */
 
-#home{
-  background:white;
-}
+    .navbar {
+      width: 92%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 18px;
+      background: #222;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-#about{
-  background:#e8e8e8;
-}
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-#skills{
-  background:#f7f7f7;
-}
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-#contact{
-  background:#dedede;
-}
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: .2s;
+    }
 
-section h2{
-  font-size:32px;
-  margin-bottom:18px;
-}
+    .nav-links a:hover {
+      color: #ffd700;
+    }
 
-section p{
-  font-size:18px;
-  line-height:1.7;
-  margin:8px 0;
-}
+    /* BUTTONS */
 
-/* SKILLS */
-.skills-container{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
+    .dark-btn,
+    .share-btn {
+      margin: 10px 5px 25px;
+      padding: 13px 22px;
+      border: none;
+      border-radius: 25px;
+      background: #222;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: .2s;
+    }
 
-.skill{
-  width:180px;
-  min-height:250px;
-  padding:30px 15px;
-  background:white;
-  border-radius:25px;
-  box-shadow:0 8px 20px rgba(0,0,0,.1);
-}
+    .dark-btn:active,
+    .share-btn:active {
+      transform: scale(.94);
+    }
 
-.skill-icon{
-  font-size:48px;
-  margin-bottom:15px;
-}
+    /* SECTIONS */
 
-.skill h3{
-  font-size:27px;
-  margin-bottom:12px;
-}
+    section {
+      width: 92%;
+      max-width: 800px;
+      margin: 25px auto;
+      padding: 55px 20px;
+      border-radius: 18px;
+      transition: .25s;
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+    }
 
-.skill p{
-  color:#666;
-  font-size:17px;
-}
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.14);
+    }
 
-/* CONTACT FORM */
-form{
-  max-width:550px;
-  margin:25px auto 0;
-}
+    #home {
+      background: white;
+    }
 
-form input,
-form textarea{
-  width:100%;
-  padding:15px;
-  margin-bottom:15px;
-  border:1px solid #ccc;
-  border-radius:12px;
-  font-size:16px;
-  font-family:Arial,sans-serif;
-}
+    #about {
+      background: #e9e9e9;
+    }
 
-form textarea{
-  height:130px;
-  resize:vertical;
-}
+    #skills {
+      background: #eeeeee;
+    }
 
-.send-btn{
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:12px;
-  background:#222;
-  color:white;
-  font-size:17px;
-  cursor:pointer;
-}
+    #projects {
+      background: #e5e5e5;
+    }
 
-/* FOOTER */
-footer{
-  padding:30px 15px;
-  margin-top:30px;
-  background:#222;
-  color:white;
-}
+    #contact {
+      background: #dcdcdc;
+    }
 
-/* DARK MODE */
-body.dark{
-  background:#111;
-  color:white;
-}
+    section h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
 
-body.dark .profile p{
-  color:#bbb;
-}
+    section p {
+      font-size: 17px;
+      line-height: 1.7;
+    }
 
-body.dark #home{
-  background:#222;
-}
+    /* SCROLL REVEAL */
 
-body.dark #about{
-  background:#333;
-}
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
 
-body.dark #skills{
-  background:#222;
-}
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-body.dark #contact{
-  background:#333;
-}
+    /* SKILLS */
 
-body.dark .skill{
-  background:#333;
-}
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-body.dark .skill p{
-  color:#ccc;
-}
+    .skill-card {
+      background: white;
+      padding: 25px 12px;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,.08);
+      transition: .25s;
+    }
 
-body.dark form input,
-body.dark form textarea{
-  background:#222;
-  color:white;
-  border-color:#555;
-}
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
 
-body.dark .dark-btn,
-body.dark .share-btn,
-body.dark .social,
-body.dark .send-btn{
-  background:#444;
-}
+    .skill-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
 
-/* BACK TO TOP */
-#topBtn{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:58px;
-  height:58px;
-  border:0;
-  border-radius:50%;
-  background:#222;
-  color:white;
-  font-size:22px;
-  cursor:pointer;
-  display:none;
-  z-index:1000;
-  box-shadow:0 5px 20px rgba(0,0,0,.25);
-}
+    .skill-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
 
-/* MOBILE */
-@media(max-width:500px){
+    .skill-card p {
+      font-size: 14px;
+      color: #666;
+    }
 
-  .profile h1{
-    font-size:32px;
-  }
+    /* PROJECTS */
 
-  .hero h2{
-    font-size:35px;
-  }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-  .navbar{
-    padding:20px 12px;
-  }
+    .project-card {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 18px;
+      box-shadow: 0 5px 15px rgba(0,0,0,.08);
+      transition: .25s;
+    }
 
-  .nav-links{
-    gap:18px;
-  }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
 
-  section{
-    padding:45px 15px;
-  }
+    .project-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
 
-  section h2{
-    font-size:29px;
-  }
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
 
-  .skill{
-    width:150px;
-  }
+    .project-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
 
-  .social{
-    font-size:16px;
-    padding:12px 17px;
-  }
-}
-</style>
+    .project-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 16px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: .2s;
+    }
+
+    .project-btn:active {
+      transform: scale(.94);
+    }
+
+    /* CONTACT */
+
+    form {
+      width: 92%;
+      max-width: 500px;
+      margin: 25px auto;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 16px;
+      font-family: Arial,sans-serif;
+      outline: none;
+    }
+
+    form textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #222;
+      box-shadow: 0 0 0 3px rgba(0,0,0,.08);
+    }
+
+    .send-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #222;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    /* TOP BUTTON */
+
+    #topBtn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: #222;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0,0,0,.25);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 20px;
+      background: #222;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* DARK MODE */
+
+    body.dark {
+      background: #111;
+      color: white;
+    }
+
+    body.dark .profile p {
+      color: #bbb;
+    }
+
+    body.dark #home {
+      background: #222;
+    }
+
+    body.dark #about {
+      background: #333;
+    }
+
+    body.dark #skills {
+      background: #333;
+    }
+
+    body.dark #projects {
+      background: #333;
+    }
+
+    body.dark #contact {
+      background: #444;
+    }
+
+    body.dark .social,
+    body.dark .dark-btn,
+    body.dark .share-btn,
+    body.dark .send-btn,
+    body.dark .project-btn {
+      background: #444;
+    }
+
+    body.dark .skill-card,
+    body.dark .project-card {
+      background: #222;
+    }
+
+    body.dark .skill-card p,
+    body.dark .project-card p {
+      color: #bbb;
+    }
+
+    body.dark input,
+    body.dark textarea {
+      background: #222;
+      color: white;
+      border-color: #555;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+
+      .navbar {
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .skills-container,
+      .projects-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .profile h1 {
+        font-size: 30px;
+      }
+
+      section {
+        padding: 45px 18px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<!-- PROFILE -->
-<div class="profile">
+  <!-- PROFILE -->
 
-  <div class="profile-photo">
-    <img src="profile.jpg" alt="Gangadhar">
-  </div>
+  <div class="profile">
 
-  <h1>Gangadhar</h1>
+    <div class="profile-photo">
+      <img src="profile.jpg" alt="Gangadhar">
+    </div>
 
-  <p>Web Developer | Learner | Creator</p>
+    <h1>Gangadhar</h1>
 
-  <div class="social-buttons">
+    <p>
+      <span id="typing"></span>
+    </p>
 
-    <a
-      href="https://www.instagram.com/muttu_vishwakarma_30"
-      target="_blank"
-      class="social">
-      📸 Instagram
-    </a>
+    <div class="social-buttons">
 
-    <a
-      href="mailto:muttubadiger618@gmail.com"
-      class="social">
-      📧 Email
-    </a>
+      <a
+        href="https://www.instagram.com/muttu_vishwakarma_30?igsh=NXJqdDdzZnYwcDA1"
+        target="_blank"
+        class="social">
+        📸 Instagram
+      </a>
 
-    <a
-      href="https://wa.me/918861261760"
-      target="_blank"
-      class="social">
-      💬 WhatsApp
-    </a>
+      <a
+        href="mailto:muttubadiger618@gmail.com"
+        class="social">
+        📧 Email
+      </a>
 
-  </div>
+      <a
+        href="https://wa.me/918861261760"
+        target="_blank"
+        class="social">
+        💬 WhatsApp
+      </a>
 
-</div>
-
-
-<!-- HERO -->
-<div class="hero">
-
-  <h2>Welcome 👋</h2>
-
-  <p>This is my personal website.</p>
-
-</div>
-
-
-<!-- NAVIGATION -->
-<nav class="navbar">
-
-  <div class="logo">
-    My Website
-  </div>
-
-  <div class="nav-links">
-
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    </div>
 
   </div>
 
-</nav>
+
+  <!-- WELCOME -->
+
+  <div class="hero">
+
+    <h2>Welcome 👋</h2>
+
+    <p>This is my first website.</p>
+
+  </div>
 
 
-<!-- ACTION BUTTONS -->
-<div class="action-buttons">
+  <!-- NAVIGATION -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      My Website
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- BUTTONS -->
 
   <button class="dark-btn" onclick="darkMode()">
     🌙 Dark Mode
@@ -447,260 +582,424 @@ body.dark .send-btn{
     🔗 Share Website
   </button>
 
-</div>
+
+  <!-- HOME -->
+
+  <section id="home" class="reveal">
+
+    <h2>Home 🏠</h2>
+
+    <p>
+      Welcome to my website!
+    </p>
+
+    <p>
+      I am learning web development
+      and building my first website.
+    </p>
+
+  </section>
 
 
-<!-- HOME -->
-<section id="home">
+  <!-- ABOUT -->
 
-  <h2>Home 🏠</h2>
+  <section id="about" class="reveal">
 
-  <p>Welcome to my website!</p>
+    <h2>About 👨‍💻</h2>
 
-  <p>
-    I am learning web development and building my own website.
-  </p>
+    <p>Hello! My name is Gangadhar.</p>
 
-</section>
+    <p>
+      I am learning HTML, CSS and JavaScript.
+    </p>
 
-
-<!-- ABOUT -->
-<section id="about">
-
-  <h2>About 👨‍💻</h2>
-
-  <p>Hello! My name is Gangadhar.</p>
-
-  <p>
-    I am learning HTML, CSS and JavaScript.
-  </p>
-
-  <p>
-    I enjoy learning new things and creating websites.
-  </p>
-
-</section>
+  </section>
 
 
-<!-- SKILLS -->
-<section id="skills">
+  <!-- SKILLS -->
 
-  <h2>My Skills 💻</h2>
+  <section id="skills" class="reveal">
 
-  <p>I am learning and improving these skills.</p>
+    <h2>My Skills 💻</h2>
 
-  <div class="skills-container">
+    <p>
+      I am learning and improving these skills.
+    </p>
 
-    <div class="skill">
+    <div class="skills-container">
 
-      <div class="skill-icon">🌐</div>
+      <div class="skill-card">
 
-      <h3>HTML</h3>
+        <div class="skill-icon">🌐</div>
 
-      <p>
-        Web Page<br>
-        Structure
-      </p>
+        <h3>HTML</h3>
+
+        <p>
+          Web Page Structure
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">🎨</div>
+
+        <h3>CSS</h3>
+
+        <p>
+          Design & Styling
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">⚡</div>
+
+        <h3>JavaScript</h3>
+
+        <p>
+          Interactive Websites
+        </p>
+
+      </div>
 
     </div>
 
+  </section>
 
-    <div class="skill">
 
-      <div class="skill-icon">🎨</div>
+  <!-- PROJECTS -->
 
-      <h3>CSS</h3>
+  <section id="projects" class="reveal">
 
-      <p>
-        Design &<br>
-        Styling
-      </p>
+    <h2>My Projects 🚀</h2>
+
+    <p>
+      Here are some of the projects I am building.
+    </p>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+
+        <div class="project-icon">🌐</div>
+
+        <h3>My Personal Website</h3>
+
+        <p>
+          My first personal website
+          built using HTML, CSS and JavaScript.
+        </p>
+
+        <a href="#home" class="project-btn">
+          View Project
+        </a>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-icon">💻</div>
+
+        <h3>Web Development</h3>
+
+        <p>
+          Learning to create modern
+          and responsive websites.
+        </p>
+
+        <a href="#skills" class="project-btn">
+          View Skills
+        </a>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-icon">🎨</div>
+
+        <h3>Creative Design</h3>
+
+        <p>
+          Creating clean and attractive
+          web designs.
+        </p>
+
+        <a href="#contact" class="project-btn">
+          Contact Me
+        </a>
+
+      </div>
 
     </div>
 
+  </section>
 
-    <div class="skill">
 
-      <div class="skill-icon">⚡</div>
+  <!-- CONTACT -->
 
-      <h3>JavaScript</h3>
+  <section id="contact" class="reveal">
 
-      <p>
-        Interactive<br>
-        Websites
-      </p>
+    <h2>Contact Me 📩</h2>
 
-    </div>
+    <form onsubmit="sendMessage(event)">
 
-  </div>
+      <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        required
+      >
 
-</section>
+      <input
+        type="email"
+        id="email"
+        placeholder="Your Email"
+        required
+      >
 
+      <textarea
+        id="message"
+        placeholder="Write your message..."
+        required
+      ></textarea>
 
-<!-- CONTACT -->
-<section id="contact">
+      <button type="submit" class="send-btn">
+        📩 Send Message
+      </button>
 
-  <h2>Contact Me 📩</h2>
+    </form>
 
-  <p>
-    Send me a message through WhatsApp.
-  </p>
+    <p>
+      Thank you for visiting my website!
+    </p>
 
-  <form onsubmit="sendMessage(event)">
+    <p>
+      You can connect with me through
+      Instagram, Email or WhatsApp.
+    </p>
 
-    <input
-      type="text"
-      id="name"
-      placeholder="Your Name"
-      required
-    >
+  </section>
 
-    <input
-      type="email"
-      id="email"
-      placeholder="Your Email"
-      required
-    >
 
-    <textarea
-      id="message"
-      placeholder="Write your message..."
-      required
-    ></textarea>
+  <!-- FOOTER -->
 
-    <button type="submit" class="send-btn">
-      📩 Send Message
-    </button>
+  <footer>
 
-  </form>
+    <p>
+      © 2026 Gangadhar.
+      All Rights Reserved.
+    </p>
 
-</section>
+  </footer>
 
 
-<!-- FOOTER -->
-<footer>
+  <!-- BACK TO TOP -->
 
-  <p>© 2026 Gangadhar. All Rights Reserved.</p>
+  <button id="topBtn" onclick="goTop()">
+    🔝
+  </button>
 
-</footer>
 
+  <script>
 
-<!-- TOP BUTTON -->
-<button id="topBtn" onclick="goTop()">
-  ⬆️
-</button>
+    /* DARK MODE */
 
+    function darkMode() {
 
-<script>
+      document.body.classList.toggle("dark");
 
-/* DARK MODE */
-function darkMode(){
+      const button =
+        document.querySelector(".dark-btn");
 
-  document.body.classList.toggle("dark");
+      if (document.body.classList.contains("dark")) {
 
-  const button = document.querySelector(".dark-btn");
+        button.innerHTML = "☀️ Light Mode";
 
-  if(document.body.classList.contains("dark")){
+      } else {
 
-    button.innerHTML = "☀️ Light Mode";
+        button.innerHTML = "🌙 Dark Mode";
 
-  }else{
+      }
 
-    button.innerHTML = "🌙 Dark Mode";
+    }
 
-  }
 
-}
+    /* SHARE */
 
+    function shareWebsite() {
 
-/* SHARE WEBSITE */
-function shareWebsite(){
+      if (navigator.share) {
 
-  const url = window.location.href;
+        navigator.share({
+          title: "Gangadhar | My Website",
+          text: "Check out my website!",
+          url: window.location.href
+        }).catch(function(){});
 
-  if(navigator.share){
+      } else {
 
-    navigator.share({
-      title:"Gangadhar | My Website",
-      text:"Visit my personal website!",
-      url:url
-    });
+        if (navigator.clipboard) {
 
-  }else{
+          navigator.clipboard.writeText(
+            window.location.href
+          );
 
-    navigator.clipboard.writeText(url);
+          alert("Website link copied! 📋");
 
-    alert("Website link copied!");
+        } else {
 
-  }
+          alert(
+            "Website link:\n" +
+            window.location.href
+          );
 
-}
+        }
 
+      }
 
-/* WHATSAPP CONTACT */
-function sendMessage(event){
+    }
 
-  event.preventDefault();
 
-  const name =
-    document.getElementById("name").value;
+    /* CONTACT → WHATSAPP */
 
-  const email =
-    document.getElementById("email").value;
+    function sendMessage(event) {
 
-  const message =
-    document.getElementById("message").value;
+      event.preventDefault();
 
-  const text =
-    "Hello Gangadhar!%0A%0A" +
-    "Name: " +
-    encodeURIComponent(name) +
-    "%0A" +
-    "Email: " +
-    encodeURIComponent(email) +
-    "%0A" +
-    "Message: " +
-    encodeURIComponent(message);
+      const name =
+        document.getElementById("name").value;
 
-  const whatsappURL =
-    "https://wa.me/918861261760?text=" + text;
+      const email =
+        document.getElementById("email").value;
 
-  window.open(whatsappURL,"_blank");
+      const message =
+        document.getElementById("message").value;
 
-  event.target.reset();
+      const whatsappMessage =
+        "Hello Gangadhar!%0A%0A" +
+        "Name: " +
+        encodeURIComponent(name) +
+        "%0A" +
+        "Email: " +
+        encodeURIComponent(email) +
+        "%0A" +
+        "Message: " +
+        encodeURIComponent(message);
 
-}
+      const whatsappURL =
+        "https://wa.me/918861261760?text=" +
+        whatsappMessage;
 
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
 
-/* BACK TO TOP */
-const topBtn =
-  document.getElementById("topBtn");
+      event.target.reset();
 
-window.addEventListener("scroll",function(){
+    }
 
-  if(window.scrollY > 400){
 
-    topBtn.style.display = "block";
+    /* TYPING EFFECT */
 
-  }else{
+    const typingText =
+      "Web Developer | Learner | Creator";
 
-    topBtn.style.display = "none";
+    let typingIndex = 0;
 
-  }
+    function typingEffect() {
 
-});
+      if (typingIndex < typingText.length) {
 
+        document.getElementById("typing")
+          .textContent +=
+          typingText.charAt(typingIndex);
 
-function goTop(){
+        typingIndex++;
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+        setTimeout(
+          typingEffect,
+          60
+        );
 
-}
+      }
 
-</script>
+    }
+
+    typingEffect();
+
+
+    /* SCROLL REVEAL */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+
+      revealElements.forEach(function(element) {
+
+        const position =
+          element.getBoundingClientRect().top;
+
+        if (
+          position <
+          window.innerHeight - 80
+        ) {
+
+          element.classList.add("show");
+
+        }
+
+      });
+
+    }
+
+    window.addEventListener(
+      "scroll",
+      revealOnScroll
+    );
+
+    revealOnScroll();
+
+
+    /* BACK TO TOP */
+
+    const topBtn =
+      document.getElementById("topBtn");
+
+    window.addEventListener(
+      "scroll",
+      function() {
+
+        if (window.scrollY > 300) {
+
+          topBtn.style.display = "block";
+
+        } else {
+
+          topBtn.style.display = "none";
+
+        }
+
+      }
+    );
+
+    function goTop() {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+  </script>
 
 </body>
   </html>
